@@ -1,5 +1,5 @@
 AppConfig[:user_defined_in_basic] = {
-   'accessions' => ['text_1', 'text_2', 'string_1', 'enum_1', 'enum_2', 'enum_3', 'enum_4', 'boolean_1'],
+   'accessions' => ['text_2', 'string_1', 'enum_1', 'enum_2', 'enum_3', 'enum_4', 'boolean_1'],
    'digital_objects' => [],
    'resources' => ['enum_1', 'enum_2', 'enum_3'],
    'hide_user_defined_section' => true
