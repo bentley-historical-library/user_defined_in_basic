@@ -32,12 +32,20 @@ UserDefinedInBasic.prototype.init = function(fields, read_only_view, hide_user_d
     fields.map(function (field) {
         // Find our fields of interest by their label text
         var fld_lab = $('.control-label').filter(function() { return $(this).text() === field });
+        var fld_for = fld_lab.attr("for");
+        var fld_value = $("#"+fld_for)[0].value;
+
+        if (field === "Staff Received" && !fld_value) {
+            var move_field = false;
+        } else {
+            var move_field = true;
+        }
 
         if (fld_lab.length > 0) {
             if (read_only_view) {
                 var elt_to_move = fld_lab.addClass('col-sm-2').removeClass('col-md-3').parent();
                 elt_to_move.insertBefore(bi.find("div.audit-display-wide"));
-            } else {
+            } else if (move_field) {
                 var elt_to_move = fld_lab.parent();
                 if (bi.find("fieldset").length > 0) {
                     elt_to_move.appendTo(bi.find("fieldset"));
