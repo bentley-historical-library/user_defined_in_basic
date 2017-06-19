@@ -33,7 +33,7 @@ UserDefinedInBasic.prototype.init = function(fields, read_only_view, hide_user_d
         // Find our fields of interest by their label text
         var fld_lab = $('.control-label').filter(function() { return $(this).text() === field });
         var fld_for = fld_lab.attr("for");
-        var fld_value = $("#"+fld_for)[0].value;
+        var fld_value = $("#".concat(fld_for)).val();
 
         if (field === "Staff Received" && !fld_value) {
             var move_field = false;
